@@ -1,0 +1,124 @@
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\PortalEngine.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\PortalEngine.pdb
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\StructureMap.pdb
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\StructureMap.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\EntityFramework.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\Newtonsoft.Json.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Net.Http.Formatting.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.Helpers.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.Http.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.Http.WebHost.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.Mvc.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.Razor.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.WebPages.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.WebPages.Razor.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\WebMatrix.Data.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\WebMatrix.WebData.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.AspNet.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.Core.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OAuth.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OpenId.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Web.Http.OData.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\Microsoft.Data.Edm.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\Microsoft.Data.OData.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\System.Spatial.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\de\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\es\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\it\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\de\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\es\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\fr\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\it\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ja\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ko\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\ru\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\zh-Hans\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\zh-Hant\System.Spatial.resources.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\obj\Debug\PortalEngine.csprojResolveAssemblyReference.cache
+D:\Projects\Web Application\SchoolPortal\PortalEngine\obj\Debug\PortalEngine.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\obj\Debug\PortalEngine.pdb
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\PagedList.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\PagedList.xml
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\PagedList.Mvc.dll
+D:\Projects\Web Application\SchoolPortal\PortalEngine\bin\PagedList.Mvc.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\PortalEngine.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\PortalEngine.pdb
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\PagedList.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\PagedList.Mvc.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\PagedList.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\PagedList.Mvc.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\StructureMap.pdb
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\StructureMap.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\EntityFramework.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\Newtonsoft.Json.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Net.Http.Formatting.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.Helpers.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.Http.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.Http.WebHost.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.Mvc.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.Razor.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.WebPages.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.WebPages.Deployment.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.WebPages.Razor.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\WebMatrix.Data.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\WebMatrix.WebData.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.AspNet.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.Core.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OAuth.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OpenId.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Web.Http.OData.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\Microsoft.Data.Edm.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\Microsoft.Data.OData.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\System.Spatial.xml
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\de\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\es\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\it\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\de\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\es\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\fr\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\it\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ja\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ko\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\ru\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\zh-Hans\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\bin\zh-Hant\System.Spatial.resources.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\obj\Debug\PortalEngine.csprojResolveAssemblyReference.cache
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\obj\Debug\PortalEngine.dll
+D:\Projects\SchoolPortal\SchoolPortal\PortalEngine\obj\Debug\PortalEngine.pdb

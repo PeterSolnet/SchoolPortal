@@ -1,0 +1,80 @@
+﻿@model UserModuleViewModel
+@{
+    ViewBag.Title = "New Module";
+}
+
+@section breadcrumb {
+    <ol class="breadcrumb">
+        <li>@ViewBag.Title</li>
+    </ol>
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+            </button>
+            <h4 class="modal-title">
+                @ViewBag.Title
+            </h4>
+        </div>
+        <div class="modal-body no-padding">
+            @using (Html.BeginForm("createmodule", "users", FormMethod.Post,
+                                      new { enctype = "multipart/form-data", @class = "smart-form", @ID = "createmodule" }))
+            { 
+                @Html.AntiForgeryToken()
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">Module Name</label>
+                            <div class="col col-10">
+                                <label class="input">
+                                    <i class="icon-append fa fa-group"></i>
+                                    @Html.EditorFor(m => m.Name, new { @placeholder = "Module Name", @ID = "ModuleName" })
+                                    <b class="tooltip tooltip-bottom-right">Module Name Required</b>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">Description</label>
+                            <div class="col col-10">
+                                <label class="input">
+                                    @Html.EditorFor(m => m.Description, new { @placeholder = "Description", @ID = "Description" })
+                                    <i class="icon-append fa fa-comment"></i>
+                                </label>
+                            </div>
+
+                        </div>
+                    </section>
+                        <section>
+                            <div class="row">
+                                <label class="label col col-2">Status</label>
+                                <div class="col col-10">
+                                    
+                                    @Html.CheckBoxFor(m => m.Status, new { @ID = "Status" })
+                                </div>
+                            </div>
+                        </section>
+
+                </fieldset>
+
+                <footer>
+                    <button type="submit" class="btn btn-success btn-sm createrole" value="Save">
+                        <span class="glyphicon glyphicon-floppy-disk"></span>
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                        Cancel
+                    </button>
+
+                </footer>                    	
+            }
+        </div>
+
+    </div>
+</div>
