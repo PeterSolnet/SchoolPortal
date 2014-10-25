@@ -14,7 +14,7 @@ namespace PortalEngine
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Users",
+                name: "Administrator",
                 url: "Administrator/{controller}/{action}",
                 defaults: new { controller = "Home", action = "Index" }
             );

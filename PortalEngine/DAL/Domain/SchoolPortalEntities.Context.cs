@@ -12,6 +12,9 @@ namespace PortalEngine.DAL.Domain
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class SchoolPortalEntities : DbContext
     {
@@ -37,5 +40,18 @@ namespace PortalEngine.DAL.Domain
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+    
+        public virtual ObjectResult<userRolesListing_Result> userRolesListing(string name, Nullable<int> iD)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<userRolesListing_Result>("userRolesListing", nameParameter, iDParameter);
+        }
     }
 }

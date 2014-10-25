@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SchoolPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SchoolPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Classes">
           <Key>
             <PropertyRef Name="ID" />
@@ -157,9 +157,12 @@
           <Property Name="ModuleID" Type="int" />
           <Property Name="RolesID" Type="int" />
           <Property Name="Priviledge" Type="nvarchar" MaxLength="50" />
-          <Property Name="PriviledgeValue" Type="bit" />
           <Property Name="Status" Type="bit" />
         </EntityType>
+        <Function Name="userRolesListing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="SchoolPortalModelStoreContainer">
           <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
@@ -174,7 +177,8 @@
           <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SchoolPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -330,10 +334,9 @@
           <Property Name="ModuleID" Type="Int32" />
           <Property Name="RolesID" Type="Int32" />
           <Property Name="Priviledge" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PriviledgeValue" Type="Boolean" />
           <Property Name="Status" Type="Boolean" />
         </EntityType>
-        <EntityContainer Name="SchoolPortalEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SchoolPortalEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Classes" EntityType="Self.Class" />
           <EntitySet Name="Countries" EntityType="Self.Country" />
           <EntitySet Name="Modules" EntityType="Self.Module" />
@@ -346,13 +349,21 @@
           <EntitySet Name="Subjects" EntityType="Self.Subject" />
           <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
           <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+          <FunctionImport Name="userRolesListing" ReturnType="Collection(SchoolPortalModel.userRolesListing_Result)">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="userRolesListing_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SchoolPortalModelStoreContainer" CdmEntityContainer="SchoolPortalEntities1">
+        <EntityContainerMapping StorageEntityContainer="SchoolPortalModelStoreContainer" CdmEntityContainer="SchoolPortalEntities">
           <EntitySetMapping Name="Classes">
             <EntityTypeMapping TypeName="SchoolPortalModel.Class">
               <MappingFragment StoreEntitySet="Classes">
@@ -378,11 +389,11 @@
           <EntitySetMapping Name="Modules">
             <EntityTypeMapping TypeName="SchoolPortalModel.Module">
               <MappingFragment StoreEntitySet="Modules">
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -515,11 +526,18 @@
                 <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
                 <ScalarProperty Name="RolesID" ColumnName="RolesID" />
                 <ScalarProperty Name="Priviledge" ColumnName="Priviledge" />
-                <ScalarProperty Name="PriviledgeValue" ColumnName="PriviledgeValue" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="userRolesListing" FunctionName="SchoolPortalModel.Store.userRolesListing">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SchoolPortalModel.userRolesListing_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

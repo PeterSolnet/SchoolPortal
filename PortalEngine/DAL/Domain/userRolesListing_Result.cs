@@ -10,15 +10,10 @@
 namespace PortalEngine.DAL.Domain
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class UserRole
+    public partial class userRolesListing_Result
     {
-        public int ID { get; set; }
         public string Name { get; set; }
-        public Nullable<int> ModuleID { get; set; }
-        public Nullable<int> RolesID { get; set; }
-        public string Priviledge { get; set; }
         public Nullable<bool> Status { get; set; }
     }
 }

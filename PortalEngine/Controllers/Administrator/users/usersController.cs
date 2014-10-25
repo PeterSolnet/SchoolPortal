@@ -54,14 +54,14 @@ namespace PortalEngine.Controllers.Administrator.users
                     Module.DateCreated = DateTime.Now;
                     _db.Modules.Add(Module);
                     _db.SaveChanges();
-                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Success","Module [" + model.Name + "]  created successfully!", "Success");
+                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", model.Name + " Module  created successfully!", "Success");
                     return RedirectToAction("modules");
                 }
-                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", "Module [" + model.Name + "]  creation failed!", "Critical");
+                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", model.Name + " Module  creation failed!", "Critical");
                  return RedirectToAction("modules");
             }
             catch (Exception ex) {
-                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", "Module [" + model.Name + "]  creation failed!", "Critical");
+                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", model.Name + " Module  creation failed!", "Critical");
                 return RedirectToAction("modules");
             }
         }
@@ -91,13 +91,13 @@ namespace PortalEngine.Controllers.Administrator.users
                 //db.Entry(model).State = EntityState.Modified;
                 }
                 _db.SaveChanges();
-            
-                Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", "Module [" + Name + "]  " + st + " successfully!", "Success");
+
+                Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", Name + " Module  " + st + " successfully!", "Success");
                 return RedirectToAction("modules");
                 
             }
 
-            Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", "Module [" + Name + "]   Failed!", "Critical");
+            Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", Name + " Module   Failed!", "Critical");
             return RedirectToAction("modules");
         }
 
@@ -133,12 +133,12 @@ namespace PortalEngine.Controllers.Administrator.users
                     updateModule.Status = UserModule.Status;
                     
                     _db.SaveChanges();
-                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", "Module [" + UserModule.Name + "]  modified successfully!", "Success");
+                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", UserModule.Name + " Module  modified successfully!", "Success");
                 }
 
                 else
                 {
-                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", "Module [" + UserModule.Name + "] Update  Failed!", "Critical");
+                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", UserModule.Name + " Module Update  Failed!", "Critical");
                 }
 
                 var model = new UserModuleViewModel();
@@ -153,7 +153,7 @@ namespace PortalEngine.Controllers.Administrator.users
                 var model = new UserModuleViewModel();
                 ViewData["createmodule"] = model;
                 var result = _db.Modules.GroupBy(x => x.Name).Select(m => m.FirstOrDefault()).OrderBy(c => c.Name).ToPagedList(page, pageCount);
-                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", "Module [" + UserModule.Name + "] Update  Failed! " + ex.Message, "Critical");
+                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", UserModule.Name + " Module Update  Failed! ", "Critical");
                 return RedirectToAction("modules");
             }
             
@@ -162,7 +162,7 @@ namespace PortalEngine.Controllers.Administrator.users
 
 
         public ActionResult Search(string search, int page = 1, int pageCount = 5)
-        {
+        { 
             var model = new UserModuleViewModel();
             ViewData["createmodule"] = model;
             var result = _db.Modules.Where(x=>x.Name==search).OrderBy(c => c.Name).ToPagedList(page, pageCount);
@@ -170,13 +170,124 @@ namespace PortalEngine.Controllers.Administrator.users
         }
 
 
+        [HttpGet]
         public ActionResult Roles(int page = 1, int pageCount = 5)
         {
-            var model = new UserModuleViewModel();
-            ViewData["createmodule"] = model;
-            var result = _db.Modules.GroupBy(x => x.Name).Select(m => m.FirstOrDefault()).OrderBy(c => c.Name).ToPagedList(page, pageCount);
+
+            var createRole = new UserRolesViewModel();
+            ViewData["createRoles"] = createRole;
+            Session["rCount"] = _db.userRolesListing("", 9).Count();
+            var result = _db.userRolesListing("", 9).ToList().ToPagedList(page, pageCount);
             return View(result);
+        }
+
+
+        [HttpPost]
+        public ActionResult CreateRoles(string Name, string Priviledges)
+        {
+            if (Priviledges == "")
+            {
+                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", Name + " Role Creation  Failed! ", "Critical");
+                return RedirectToAction("Roles");
+            }
+
+            Priviledges = Priviledges.Remove(Priviledges.Length - 1);
+
+            string[] RolePrivi = Priviledges.Split('|');
+
+            var UserRoles = new UserRole();
+
+
+            for (int l = 0; (l <= RolePrivi.Length - 1); l++)
+            {
+                UserRoles.RolesID = Convert.ToInt32(Session["rCount"]);
+                UserRoles.Name = Name;
+                UserRoles.ModuleID = Convert.ToInt32(Getstring(RolePrivi[l].ToString(), '_', 1));
+                UserRoles.Priviledge = GetPriviledges(RolePrivi[l].ToString(), ':');
+                UserRoles.Status = true;
+                _db.UserRoles.Add(UserRoles);
+                _db.SaveChanges();
+
+            }
+
+            Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", Name + " Role Creation  Successfull! ", "Success");
+            return RedirectToAction("Roles");
+        }
+
+        private string Getstring(string text2search, char delimeter, int pos)
+        {
+            if (text2search.Length > 0)
+            {
+                string[] collect = text2search.Split(delimeter);
+                return collect[pos];
+            }
+            return "";
+        }
+
+        private string GetPriviledges(string text2search, char delimeter)
+        {
+            if (text2search.Length > 0)
+            {
+                string pr = "";
+
+                string[] collect = text2search.Split(delimeter);
+                collect = collect.Where(c => c != collect[0]).ToArray();
+
+                for (int i = 0; (i <= collect.Length - 1); i++)
+                {
+                    int index = collect[i].IndexOf(';');
+                    if (index > 0)
+                        collect[i] = collect[i].Substring(0, index);
+                    pr += collect[i] + ",";
+                }
+                pr = pr.Remove(pr.Length - 1);
+                return pr;
+            }
+            return "";
+        }
+
         
+        public ActionResult EndableRole(string Name, bool Enable)
+        {
+            var UserRoles = new UserRole();
+
+            try
+            {
+
+                if (Enable == true)
+                {
+                    var some = _db.UserRoles.Where(x => x.Name == Name).ToList();
+                    some.ForEach(a =>
+                    {
+                        a.Status = false;
+                    });
+                }
+
+                else if (Enable == false)
+                {
+                    var some = _db.UserRoles.Where(x => x.Name == Name).ToList();
+                    some.ForEach(a =>
+                    {
+                        a.Status = true;
+                    });
+                }
+
+                _db.SaveChanges();
+
+                if (Enable == true)
+                {
+                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", Name + " Role Disabled  Successfuly! ", "Success");
+                }
+                else
+                {
+                    Session["Message"] = Infrastructure.ApplicationSettings.Message("Success", Name + " Role Enabled  Successfuly! ", "Success");
+                }
+            }
+            catch (Exception e)
+            {
+                Session["Message"] = Infrastructure.ApplicationSettings.Message("Critical", Name + " Role Operation  Failed! ", "Critical");
+            }
+            return RedirectToAction("Roles");
         }
     }
 }

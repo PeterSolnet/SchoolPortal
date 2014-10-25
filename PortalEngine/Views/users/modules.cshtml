@@ -20,7 +20,7 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
         @Html.Partial("createmodule", ViewData["createmodule"])
     </div>
-
+    
     <div class="modal fade" id="EditModule" tabindex="-2" role="dialog">
 
         <div class="modal-dialog">
@@ -170,26 +170,26 @@
                             @{
                                 int k = 1;
 
-                                foreach (var roles in Model)
+                                foreach (var modules in Model)
                                 { 
                                 <tr>
                                     <td style="width: 5%;">@k</td>
                                     <td data-class="expand">
-                                        <text title="@roles.Name">@roles.Name</text>
+                                        <text title="@modules.Name">@modules.Name</text>
 
-                                        @*@Html.ActionLink(roles.Name, "editmodules", "users", new {ID = roles.ID,Name = roles.Name }, new { @title = "Modify [ " + roles.Name + " ]", @class = "modifyModal", @ID = "editmoduleID" })*@
+                                        @*@Html.ActionLink(modules.Name, "editmodules", "users", new {ID = modules.ID,Name = modules.Name }, new { @title = "Modify [ " + modules.Name + " ]", @class = "modifyModal", @ID = "editmoduleID" })*@
 
                                     </td>
-                                    <td data-class="expand"><span title="@Html.Raw(roles.Description)">
+                                    <td data-class="expand"><span title="@Html.Raw(modules.Description)">
                                         @{
-                                    if (roles.Description.Length > 46)
+                                    if (modules.Description.Length > 46)
                                     {
-                                        string Descr = roles.Description.Substring(0, 46);
+                                        string Descr = modules.Description.Substring(0, 46);
                                             <text>@Descr ...</text>
                                                 
                                     }
                                     else
-                                    { @roles.Description }
+                                    { @modules.Description }
                                              
                                         }
 
@@ -198,19 +198,19 @@
 
                                     <td data-class="expand">
                                         @{
-                                    if (@roles.Status == false)
+                                    if (@modules.Status == false)
                                     { 
-                                            @Html.IconActionLink("fa fa-times", "", "statusChange", "users", new { roles.ID }, new { @title = "Enable " + roles.Name + " Module", @data_toggle = "modal" })
+                                            @Html.IconActionLink("fa fa-times", "", "statusChange", "users", new { modules.ID }, new { @title = "Enable " + modules.Name + " Module", @data_toggle = "modal" })
                                     }
                                     else
                                     {
-                                            @Html.IconActionLink("fa fa-check", "", "statusChange", "users", new { roles.ID }, new { @title = "Disable " + roles.Name + " Module", @data_toggle = "modal" })
+                                            @Html.IconActionLink("fa fa-check", "", "statusChange", "users", new { modules.ID }, new { @title = "Disable " + modules.Name + " Module", @data_toggle = "modal" })
                                     }
                                                 
                                         }
                                     </td>
                                     <td data-class="expand">
-                                        <a id="EditModuleCaller_@roles.ID" onclick="callJson('EditModuleCaller_@roles.ID')" data-toggle="modal" href="#EditModule" class="hidden-mobile" refURL="editmodules?ID=@roles.ID" title="Modify [ @roles.Name ]" role="@roles.ID"><i class="fa fa-edit"></i></a>
+                                        <a id="EditModuleCaller_@modules.ID" onclick="callJson('EditModuleCaller_@modules.ID')" data-toggle="modal" href="#EditModule" class="hidden-mobile" refURL="editmodules?ID=@modules.ID" title="Modify [ @modules.Name ]" role="@modules.ID"><i class="fa fa-edit"></i></a>
                                     </td>
                                 </tr>  
                                     k++;

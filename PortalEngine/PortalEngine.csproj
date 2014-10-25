@@ -205,57 +205,61 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="DAL\Domain\Class.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\Country.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Domain\dbContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Domain\dbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\Domain\dbContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbContext.edmx</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\Module.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\School.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Domain\SchoolPortalEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolPortalEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Domain\SchoolPortalEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Domain\SchoolPortalEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolPortalEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\Staff.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\StaffOrganogram.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\StaffQualification.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\State.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\Student.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\Subject.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\UserProfile.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Domain\UserRole.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Domain\userRolesListing_Result.cs">
+      <DependentUpon>SchoolPortalEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ViewModels\UserModuleViewModel.cs" />
+    <Compile Include="DAL\ViewModels\UserRolesViewModel.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -1024,22 +1028,22 @@
     <Content Include="Content\themes\js\plugin\ckeditor\README.md" />
     <Content Include="Content\themes\js\plugin\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
     <Content Include="Content\themes\js\plugin\ckeditor\skins\moono\readme.md" />
-    <EntityDeploy Include="DAL\Domain\dbContext.edmx">
+    <EntityDeploy Include="DAL\Domain\SchoolPortalEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>SchoolPortalEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DAL\Domain\dbContext.Context.tt">
+    <Content Include="DAL\Domain\SchoolPortalEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbContext.edmx</DependentUpon>
-      <LastGenOutput>dbContext.Context.cs</LastGenOutput>
+      <DependentUpon>SchoolPortalEntities.edmx</DependentUpon>
+      <LastGenOutput>SchoolPortalEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DAL\Domain\dbContext.edmx.diagram">
-      <DependentUpon>dbContext.edmx</DependentUpon>
+    <Content Include="DAL\Domain\SchoolPortalEntities.edmx.diagram">
+      <DependentUpon>SchoolPortalEntities.edmx</DependentUpon>
     </Content>
-    <Content Include="DAL\Domain\dbContext.tt">
+    <Content Include="DAL\Domain\SchoolPortalEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbContext.edmx</DependentUpon>
-      <LastGenOutput>dbContext.cs</LastGenOutput>
+      <DependentUpon>SchoolPortalEntities.edmx</DependentUpon>
+      <LastGenOutput>SchoolPortalEntities.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -1087,6 +1091,8 @@
     <Content Include="Views\users\modules.cshtml" />
     <Content Include="Views\users\createmodule.cshtml" />
     <Content Include="Views\users\editmodules.cshtml" />
+    <Content Include="Views\users\Roles.cshtml" />
+    <Content Include="Views\users\Role.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

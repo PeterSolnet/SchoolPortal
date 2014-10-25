@@ -152,7 +152,6 @@
     <Property Name="ModuleID" Type="Int32" />
     <Property Name="RolesID" Type="Int32" />
     <Property Name="Priviledge" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PriviledgeValue" Type="Boolean" />
     <Property Name="Status" Type="Boolean" />
   </EntityType>
   <EntityContainer Name="SchoolPortalEntities" annotation:LazyLoadingEnabled="true">
@@ -174,12 +173,7 @@
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="userRolesListing_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
-    <Property Type="Int32" Name="ModuleID" Nullable="true" />
-    <Property Type="Int32" Name="RolesID" Nullable="true" />
-    <Property Type="String" Name="Priviledge" Nullable="true" MaxLength="50" />
-    <Property Type="Boolean" Name="PriviledgeValue" Nullable="true" />
     <Property Type="Boolean" Name="Status" Nullable="true" />
   </ComplexType>
 </Schema>

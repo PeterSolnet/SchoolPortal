@@ -1,0 +1,112 @@
+﻿@model UserRolesViewModel
+@{
+    ViewBag.Title = "New User Role";
+}
+
+@section breadcrumb {
+    <ol class="breadcrumb">
+        <li>@ViewBag.Title</li>
+    </ol>
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+            </button>
+            <h4 class="modal-title">
+                @ViewBag.Title
+            </h4>
+        </div>
+        <div class="modal-body no-padding">
+            @using (Html.BeginForm("CreateRoles", "users", FormMethod.Post,
+                                      new { enctype = "multipart/form-data", @class = "smart-form", @ID = "CreateRoles" }))
+            { 
+                @Html.AntiForgeryToken()
+                <fieldset>
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2">Module Name</label>
+                            <div class="col col-10">
+                                <label class="input">
+                                    <i class="icon-append fa fa-group"></i>
+                                    @Html.EditorFor(m => m.Name, new { @placeholder = "User Role Name", @ID = "RoleName" })
+                                    <b class="tooltip tooltip-bottom-right">Role Name Required</b>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="row">
+                            <label class="label col col-2"></label>
+                            <div class="col col-10 inline-list">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="foreall" id="checkAll" />
+                                    <i></i>Check All</label>
+
+                                @{
+                                    
+                SchoolPortalEntities _db = new SchoolPortalEntities();
+                var mm = _db.Modules.ToList();
+
+                foreach (var item in mm)
+                {
+                    //List all module Names
+
+                                    @Html.Hidden(item.ID.ToString())
+
+                                    <ul>
+                                        <div class="heading">@item.Name</div>
+                                        <li>
+                                            <label class="checkbox">
+                                                @Html.CheckBox(@item.Name + "_" + @item.ID + "_View", new { @ID = @item.Name + "_" + @item.ID + "_View", @data_group = @item.Name, @class="uncheckSelector" })
+                                                <i></i>View</label>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkbox">
+                                                @*<input type="checkbox" id="@item.Name @item.ID  _Create" data_group="@item.Name" />*@
+                                                @Html.CheckBox(@item.Name + "_" + @item.ID + "_Create", new { @ID = @item.Name + "_" + @item.ID + "_Create", @data_group = @item.Name, @class="uncheckSelector" })
+                                                <i></i>Create</label>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkbox">
+                                                @Html.CheckBox(@item.Name + "_" + @item.ID + "_Modify", new { @ID = @item.Name + "_" + @item.ID + "_Modify", @data_group = @item.Name, @class="uncheckSelector" })
+                                                <i></i>Modify</label>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkbox">
+                                                @Html.CheckBox(@item.Name + "_" + @item.ID + "_Delete", new { @ID = @item.Name + "_" + @item.ID + "_Delete", @data_group = @item.Name, @class="uncheckSelector" })
+                                                <i></i>Delete</label>
+                                        </li>
+                                    </ul>        
+                                                  
+                }
+                                }
+                            </div>
+                        </div>
+                         @Html.Hidden("Priviledges")  
+                    </section>
+
+                </fieldset>
+
+                <footer>
+                    <button type="submit" class="btn btn-success btn-sm createrole" value="Save">
+                        <span class="glyphicon glyphicon-floppy-disk"></span>
+                        Save
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                        Cancel
+                    </button>
+                   
+                </footer>                    	
+            }
+        </div>
+
+    </div>
+</div>

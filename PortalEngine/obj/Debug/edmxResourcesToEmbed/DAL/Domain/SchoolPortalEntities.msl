@@ -26,11 +26,11 @@
     <EntitySetMapping Name="Modules">
       <EntityTypeMapping TypeName="SchoolPortalModel.Module">
         <MappingFragment StoreEntitySet="Modules">
-          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -170,12 +170,7 @@
     <FunctionImportMapping FunctionImportName="userRolesListing" FunctionName="SchoolPortalModel.Store.userRolesListing">
       <ResultMapping>
         <ComplexTypeMapping TypeName="SchoolPortalModel.userRolesListing_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
-          <ScalarProperty Name="RolesID" ColumnName="RolesID" />
-          <ScalarProperty Name="Priviledge" ColumnName="Priviledge" />
-          <ScalarProperty Name="PriviledgeValue" ColumnName="PriviledgeValue" />
           <ScalarProperty Name="Status" ColumnName="Status" />
         </ComplexTypeMapping>
       </ResultMapping>
